@@ -3,48 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Sales Vision: CPrompt Solutions to 1000 Cr</title>
+    <title>My Sales Vision: C Prompt Solutions to 1000 Cr</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- 
-    Chosen Palette: "CPrompt Corporate Blue" - Using #0D47A1 as primary, #42A5F5 as secondary, and #495057 for text to align with corporate branding while maintaining a modern, clean aesthetic.
-    Application Structure Plan: The application is structured as a vertical scrolling narrative, telling a story from the ambitious goal to the detailed execution. It starts with the "What" (the 1000 Cr goal), moves to the "Why" (market opportunity), introduces "Who" (my background and personal brand), details the "How" (my strategy, team, and frameworks), highlights "Proven Impact" (my track record), covers the "Guardrails" (data-driven approach and risk mitigation), and ends with the "Payoff" (value proposition & CTA). This logical flow is more engaging than a static report and guides the user through a persuasive argument, making it ideal for an interview presentation.
-    Visualization & Content Choices: 
-    - Revenue Goal: Bar Chart (Chart.js) to clearly show year-on-year growth. Goal: Compare/Change.
-    - Market Stats: Big Numbers (HTML/CSS) for high-impact stats like market size. Goal: Inform.
-    - My Journey: Timeline/Key Facts (HTML/CSS with Unicode icons) for scannable career highlights. Goal: Organize/Inform.
-    - My Brand: Personal details, social links, awards, and video links with actual YouTube thumbnails (HTML/CSS, Unicode icons). Goal: Inform/Engage.
-    - My Track Record: Highlighted achievements (HTML/CSS with Unicode icons) to showcase specific impactful results. Goal: Inform/Organize.
-    - Key Drivers/Pillars: Cards with Icons (HTML/CSS using Unicode) for scannable, organized information. Goal: Organize.
-    - Expansion Plan: Structured HTML lists and text to describe geographical focus. Goal: Organize.
-    - Sales Framework: Flowchart built with HTML/CSS and borders to show process. Goal: Organize.
-    - Hunter/Farmer & BANT/SPIN: Two-column layouts for direct comparison. Goal: Compare.
-    - KPI Dashboard: Grid of cards with a mix of Big Numbers and mini Line/Doughnut charts (Chart.js) to simulate a real dashboard. Goal: Inform/Compare.
-    CONFIRMATION: NO SVG graphics used. NO Mermaid JS used.
-    -->
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #F8FAFC;
-            color: #1E293B;
+            background-color: #f5f7fa; /* C Prompt background */
+            color: #222b45; /* C Prompt text */
         }
-        .c-primary { color: #0D47A1; }
-        .bg-c-primary { background-color: #0D47A1; }
-        .c-secondary { color: #42A5F5; }
-        .bg-c-secondary { background-color: #42A5F5; }
-        .border-c-primary { border-color: #0D47A1; }
-        .border-c-secondary { border-color: #42A5F5; }
-        
+        .c-primary { color: #1a237e; } /* C Prompt deep blue */
+        .bg-c-primary { background-color: #1a237e; }
+        .c-secondary { color: #ffb300; } /* C Prompt yellow */
+        .bg-c-secondary { background-color: #ffb300; }
+        .border-c-primary { border-color: #1a237e; }
+        .border-c-secondary { border-color: #ffb300; }
+        .c-accent { color: #3949ab; }
+        .bg-c-accent { background-color: #3949ab; }
+        .q-section-heading {
+            background-color: #e8eaf6; /* light blue from C Prompt palette */
+            color: #1a237e;
+            padding: 1.5rem 1rem;
+            border-radius: 0.75rem;
+            text-align: center;
+            font-size: 1.875rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+        }
         .chart-container {
             position: relative;
             width: 100%;
             margin-left: auto;
             margin-right: auto;
         }
-        
         .fade-in-section {
             opacity: 0;
             transform: translateY(20px);
@@ -66,7 +61,7 @@
             top: 0.25rem;
             width: 0.75rem;
             height: 0.75rem;
-            background-color: #0D47A1;
+            background-color: #ffb300;
             border-radius: 50%;
             z-index: 1;
         }
@@ -77,51 +72,57 @@
             top: 1rem;
             bottom: -0.5rem;
             width: 0.125rem;
-            background-color: #42A5F5;
+            background-color: #3949ab;
         }
         .video-thumbnail {
             width: 100%;
-            height: 150px; /* Fixed height for thumbnails */
-            background-color: #cbd5e1; /* Placeholder gray if image fails */
+            height: 150px; 
+            background-color: #e8eaf6;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 0.875rem;
-            color: #475569;
+            color: #3949ab;
             text-align: center;
             border-radius: 0.5rem;
             overflow: hidden;
             position: relative;
-            background-size: cover; /* Ensure image covers the area */
-            background-position: center; /* Center the background image */
+            background-size: cover;
+            background-position: center;
         }
         .video-thumbnail::after {
-            content: '▶️'; /* Play icon */
+            content: '▶️';
             position: absolute;
             font-size: 3rem;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            color: #ffb300;
+            text-shadow: 2px 2px 4px rgba(26,35,126,0.3);
+        }
+        /* Button hover */
+        .bg-c-secondary:hover, .hover\:bg-c-secondary:hover {
+            background-color: #ffd54f !important;
+            color: #1a237e !important;
+        }
+        .bg-c-primary:hover, .hover\:bg-c-primary:hover {
+            background-color: #283593 !important;
         }
     </style>
 </head>
 <body class="antialiased">
-
-    <!-- Header / Hero Section -->
     <header class="bg-c-primary text-white text-center py-20 px-4 relative overflow-hidden">
         <div class="absolute inset-0 bg-black opacity-20"></div>
         <div class="relative z-10">
-            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">Leading CPrompt Solutions to 1000 Crores</h1>
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">Leading C Prompt Solutions to 1000 Crores</h1>
             <p class="mt-4 text-xl md:text-2xl font-light text-gray-200">My Strategic Sales Vision for Hyper-Growth in 3 Years</p>
             <p class="mt-8 text-lg font-semibold">Presented by Vishal Makhija</p>
-            <p id="contact-header" class="mt-2 text-base text-gray-200 font-medium">+91 9582807840 | <a href="mailto:vishal.makhija0501@gmail.com" class="underline hover:text-c-secondary">vishal.makhija0501@gmail.com</a></p>
+            <p class="text-md text-gray-300" id="contact-header">📞 +91-9582807840 | 📧 vishal.makhija0501@gmail.com</p>
         </div>
     </header>
-
     <main class="container mx-auto p-4 md:p-8">
         
-        <!-- The Audacious Goal -->
-        <section id="goal" class="fade-in-section my-16 md:my-24">
-            <h2 class="text-3xl md:text-4xl font-bold text-center c-primary mb-2">The Audacious Goal</h2>
+        <section id="q1-vision" class="fade-in-section my-16 md:my-24">
+            <h2 class="q-section-heading">Q1: What's the Target?</h2>
+            
+            <h3 class="text-2xl md:text-3xl font-bold text-center c-primary mb-2">The Audacious Goal from 60 Cr to 1000 Cr in 3 Years!</h3>
             <p class="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">A 16x revenue transformation, moving from a strong foundation to market dominance. This isn't a projection; it's a data-backed roadmap.</p>
             <div class="bg-white p-6 rounded-xl shadow-lg max-w-4xl mx-auto">
                 <div class="chart-container h-64 md:h-96">
@@ -130,345 +131,393 @@
             </div>
         </section>
 
-        <!-- The Market Opportunity -->
-        <section id="opportunity" class="fade-in-section my-16 md:my-24">
-            <h2 class="text-3xl md:text-4xl font-bold text-center c-primary mb-2">The Market Opportunity</h2>
-            <p class="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">Our growth is fueled by a booming market. We are perfectly positioned to capture immense demand by solving critical business pains.</p>
+        <section id="q2-market" class="fade-in-section my-16 md:my-24">
+            <h2 class="q-section-heading">Q2: Is This Even Possible?</h2>
+            
+            <h3 class="text-2xl md:text-3xl font-bold text-center c-primary mb-2">Yes, the Market Opportunity is Available!</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="bg-white p-6 rounded-xl shadow-lg text-center flex flex-col justify-center">
-                    <span class="text-4xl font-extrabold c-secondary">$106.8B</span>
-                    <p class="mt-2 text-gray-700 font-semibold">India Enterprise Asset Leasing Market (2024)</p>
+                    <span class="text-4xl font-extrabold c-secondary">~USD 151.1B</span>
+                    <p class="mt-2 text-gray-700 font-semibold">Global Laptop Leasing Market (2024)</p>
                 </div>
                 <div class="bg-white p-6 rounded-xl shadow-lg text-center flex flex-col justify-center">
-                    <span class="text-4xl font-extrabold c-secondary">~29%</span>
-                    <p class="mt-2 text-gray-700 font-semibold">Global DaaS Market CAGR</p>
+                    <span class="text-4xl font-extrabold c-secondary">~3.07%</span>
+                    <p class="mt-2 text-gray-700 font-semibold">Global Laptop Leasing Market CAGR</p>
                 </div>
                 <div class="bg-white p-6 rounded-xl shadow-lg text-center flex flex-col justify-center">
-                     <span class="text-4xl font-extrabold c-secondary">&gt;60%</span>
+                     <span class="text-4xl font-extrabold c-secondary">>60%</span>
                     <p class="mt-2 text-gray-700 font-semibold">of Businesses Cite Cost Savings as a Primary Benefit</p>
                 </div>
                 <div class="bg-white p-6 rounded-xl shadow-lg text-center flex flex-col justify-center">
-                    <span class="text-4xl font-extrabold c-secondary">&gt;45%</span>
+                    <span class="text-4xl font-extrabold c-secondary">>45%</span>
                     <p class="mt-2 text-gray-700 font-semibold">of Startups Opt for Rental Solutions</p>
                 </div>
             </div>
-
-            <!-- LLM Feature: Market Insight Generator -->
-            <div class="mt-12 text-center">
-                <button id="generateMarketInsightBtn" class="bg-c-secondary text-white font-bold py-3 px-6 rounded-full hover:bg-blue-400 transition-colors shadow-md">
-                    ✨ Generate Market Insight
-                </button>
-                <div id="marketInsightOutput" class="bg-gray-100 p-6 rounded-xl shadow-inner mt-4 max-w-2xl mx-auto text-gray-800 text-left hidden">
-                    <p class="font-bold mb-2">AI-Generated Market Insight:</p>
-                    <p id="marketInsightText" class="text-sm"></p>
-                    <div id="marketInsightLoading" class="text-center mt-2 hidden">
-                        <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-c-primary mx-auto"></div>
-                        <p class="text-gray-500 text-sm mt-2">Generating insight...</p>
-                    </div>
-                </div>
-            </div>
         </section>
 
-        <!-- My Journey: The Foundation for Hyper-Growth -->
-        <section id="my-journey" class="fade-in-section my-16 md:my-24">
-            <h2 class="text-3xl md:text-4xl font-bold text-center c-primary mb-2">My Journey: The Foundation for Hyper-Growth</h2>
-            <p class="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">My 18 years of diverse experience in sales, consulting, and entrepreneurship provides a unique blend of expertise for this challenge.</p>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                <div class="bg-white p-8 rounded-xl shadow-lg">
-                    <h3 class="text-2xl font-bold c-primary mb-4">Key Milestones</h3>
-                    <div class="space-y-4">
-                        <div class="timeline-item">
-                            <h4 class="font-semibold text-lg">2001-2004: BSc (Allahabad University)</h4>
-                            <p class="text-gray-600">Mathematics and Computers.</p>
-                        </div>
-                        <div class="timeline-item">
-                            <h4 class="font-semibold text-lg">2005-2007: MBA (NMIMS)</h4>
-                            <p class="text-gray-600">Strong academic foundation in Marketing & IT.</p>
-                        </div>
-                        <div class="timeline-item">
-                            <h4 class="font-semibold text-lg">2007-2008: Aditya Birla Leadership Program (ABGLP)</h4>
-                            <p class="text-gray-600">Management Trainee, worked on business strategy enhancement for Jayashree Textile and Madura Garments.</p>
-                        </div>
-                        <div class="timeline-item">
-                            <h4 class="font-semibold text-lg">2008-2010: Evalueserve (1st Stint)</h4>
-                            <p class="text-gray-600">Manager - Business Research, leading multicultural teams, executing 100s of projects.</p>
-                        </div>
-                        <div class="timeline-item">
-                            <h4 class="font-semibold text-lg">2010-2016: Beroe (Director Sales - APAC)</h4>
-                            <p class="text-gray-600">Pivotal role in transforming Beroe from startup to global leader; pioneered APAC expansion, client acquisitions in UAE, KSA, India.</p>
-                        </div>
-                        <div class="timeline-item">
-                            <h4 class="font-semibold text-lg">2016-2018: Evalueserve (2nd Stint - AVP)</h4>
-                            <p class="text-gray-600">Led Global Procurement Intelligence Practice, launched 2 digital products, brought in 20+ Fortune 500 logos.</p>
-                        </div>
-                        <div class="timeline-item">
-                            <h4 class="font-semibold text-lg">2018-2023: Co-Founder, DRUT</h4>
-                            <p class="text-gray-600">Enabled growth, funding, and acquisitions for 6 B2B startups; setup large inside sales teams.</p>
-                        </div>
-                        <div class="timeline-item">
-                            <h4 class="font-semibold text-lg">2023-Present: Co-Founder, Taiyaar</h4>
-                            <p class="text-gray-600">Launched HR marketplace, gained valuable tech experience, empowering raw talent from smaller cities.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-lg flex flex-col justify-center items-center">
-                    <h3 class="text-2xl font-bold c-primary mb-4 text-center">My Core Strengths</h3>
-                    <div class="grid grid-cols-2 gap-4 text-center w-full">
-                        <div class="p-4 bg-gray-50 rounded-lg">
-                            <span class="text-4xl">💼</span>
-                            <p class="font-semibold mt-2">18 Years Consultative Sales</p>
-                        </div>
-                        <div class="p-4 bg-gray-50 rounded-lg">
-                            <span class="text-4xl">B2B</span>
-                            <p class="font-semibold mt-2">B2B Sales Expert</p>
-                        </div>
-                        <div class="p-4 bg-gray-50 rounded-lg">
-                            <span class="text-4xl">🚀</span>
-                            <p class="font-semibold mt-2">2X Entrepreneur</p>
-                        </div>
-                        <div class="p-4 bg-gray-50 rounded-lg">
-                            <span class="text-4xl">✈️</span>
-                            <p class="font-semibold mt-2">Global Experience</p>
-                        </div>
-                        <div class="p-4 bg-gray-50 rounded-lg col-span-2">
-                             <span class="text-4xl">💡</span>
-                            <p class="font-semibold mt-2">Data Science & AI Advocate</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- My Brand & Impact -->
-        <section id="my-brand" class="fade-in-section my-16 md:my-24">
-            <h2 class="text-3xl md:text-4xl font-bold text-center c-primary mb-2">My Brand: Leadership & Impact</h2>
-            <p class="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">Beyond the resume, my commitment to leadership, innovation, and industry contribution speaks for itself.</p>
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <div class="bg-white p-8 rounded-xl shadow-lg text-center flex flex-col items-center">
-                    <div class="w-32 h-32 rounded-full bg-gray-200 flex items-center justify-center overflow-hidden mb-4">
-                        <img src="vishal.jpg" alt="Vishal Makhija" class="w-full h-full object-cover" loading="lazy">
-                    </div>
-                    <h3 class="text-xl font-bold c-primary mb-2">Connect with Me</h3>
-                    <p class="text-gray-600 mb-4">Find my professional journey and thought leadership on LinkedIn.</p>
-                    <a href="https://www.linkedin.com/in/vishal-makhija-66898751/" target="_blank" class="bg-c-secondary text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-blue-400 transition-colors">
-                        LinkedIn Profile ▶️
-                    </a>
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-lg text-center lg:col-span-2">
-                    <h3 class="text-2xl font-bold c-primary mb-4">Recognitions & Public Voice</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                        <div class="bg-gray-50 p-4 rounded-lg flex items-center justify-center space-x-3">
-                            <span class="text-3xl">🏆</span>
-                            <p class="font-semibold text-gray-800">Chairman Award Recipient (Evalueserve)</p>
-                        </div>
-                        <div class="bg-gray-50 p-4 rounded-lg flex items-center justify-center space-x-3">
-                            <span class="text-3xl">🏅</span>
-                            <p class="font-semibold text-gray-800">Multiple Awards (Beroe, Evalueserve)</p>
-                        </div>
-                        <div class="bg-gray-50 p-4 rounded-lg flex items-center justify-center space-x-3 col-span-full">
-                            <span class="text-3xl">🎤</span>
-                            <p class="font-semibold text-gray-800">Speaker at various conferences, including NASSCOM</p>
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-bold c-primary mb-4">Featured Sales & Industry Insights</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <a href="https://www.youtube.com/watch?v=pZMWXlKUlQI" target="_blank" class="block rounded-lg shadow-md hover:shadow-lg transition-shadow overflow-hidden">
-                            <div class="video-thumbnail" style="background-image: url('https://img.youtube.com/vi/pZMWXlKUlQI/hqdefault.jpg');">
-                                <!-- Actual thumbnail will be loaded via CSS background-image -->
-                            </div>
-                            <p class="text-sm font-semibold text-gray-700 p-2">Decoding Future of Procurement: A Sales Perspective</p>
-                        </a>
-                        <a href="https://www.youtube.com/watch?v=lgZgQcTifQM" target="_blank" class="block rounded-lg shadow-md hover:shadow-lg transition-shadow overflow-hidden">
-                            <div class="video-thumbnail" style="background-image: url('https://img.youtube.com/vi/lgZgQcTifQM/hqdefault.jpg');">
-                                <!-- Actual thumbnail will be loaded via CSS background-image -->
-                            </div>
-                            <p class="text-sm font-semibold text-gray-700 p-2">NISC 2019 - Sales Leadership Interview with Mr. Vishal Makhija</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- My Strategic Pillars -->
-        <section id="strategy" class="fade-in-section my-16 md:my-24">
-            <h2 class="text-3xl md:text-4xl font-bold text-center c-primary mb-12">My Strategic Pillars for Hyper-Growth</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
-                    <div class="text-5xl c-secondary mb-4">💻</div>
-                    <h3 class="text-xl font-bold c-primary mb-2">Optimized DaaS</h3>
-                    <p class="text-gray-600">Package current offerings into best-in-class, full-lifecycle Device-as-a-Service solutions that are irresistible to enterprise clients.</p>
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
-                    <div class="text-5xl c-secondary mb-4">📈</div>
-                    <h3 class="text-xl font-bold c-primary mb-2">Value-Driven Solutions</h3>
-                    <p class="text-gray-600">Shift from selling hardware to providing comprehensive solutions that solve major business problems and deliver clear, quantifiable ROI.</p>
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
-                     <div class="text-5xl c-secondary mb-4">🤝</div>
-                    <h3 class="text-xl font-bold c-primary mb-2">Strategic Alliances</h3>
-                    <p class="text-gray-600">Build deep partnerships with OEMs, System Integrators, and ISVs to expand our reach and create an unbeatable ecosystem.</p>
-                     <!-- LLM Feature: Strategic Alliance Brainstormer -->
-                    <button id="brainstormAlliancesBtn" class="mt-4 bg-blue-100 text-c-primary font-bold py-2 px-4 rounded-full text-sm hover:bg-blue-200 transition-colors">
-                        ✨ Brainstorm More Alliances
-                    </button>
-                    <div id="allianceBrainstormOutput" class="bg-gray-100 p-4 rounded-xl shadow-inner mt-4 text-gray-800 text-left hidden">
-                        <p class="font-bold mb-1 text-sm">AI-Generated Alliance Ideas:</p>
-                        <p id="allianceBrainstormText" class="text-xs"></p>
-                        <div id="allianceBrainstormLoading" class="text-center mt-2 hidden">
-                            <div class="animate-spin rounded-full h-6 w-6 border-b-2 border-c-primary mx-auto"></div>
-                            <p class="text-gray-500 text-xs mt-1">Brainstorming...</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Targeting and Expansion -->
-        <section id="targeting" class="fade-in-section my-16 md:my-24">
-            <h2 class="text-3xl md:text-4xl font-bold text-center c-primary mb-2">Targeting & Geographical Expansion</h2>
+        <section id="q3-industries" class="fade-in-section my-16 md:my-24">
+            <h2 class="q-section-heading">Q3: Which Industries Will We Target?</h2>
             <p class="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">We will fish where the big fish are, focusing on high-potential clients and strategically expanding our footprint across India and beyond.</p>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-1 gap-8 max-w-6xl mx-auto">
                 <div class="bg-white p-8 rounded-xl shadow-lg">
                     <h3 class="text-2xl font-bold c-primary mb-4 text-center">Hyper-Growth Client Segments</h3>
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 text-center">
-                        <div class="p-4 bg-gray-50 rounded-lg"><span class="text-3xl">💰</span><p class="font-semibold mt-2">Profitable Firms<br>(Revenue &gt;1000cr)</p></div>
-                        <div class="p-4 bg-gray-50 rounded-lg"><span class="text-3xl">💻</span><p class="font-semibold mt-2">IT/ITES</p></div>
-                        <div class="p-4 bg-gray-50 rounded-lg"><span class="text-3xl">🏦</span><p class="font-semibold mt-2">BFSI</p></div>
-                        <div class="p-4 bg-gray-50 rounded-lg"><span class="text-3xl">🏫</span><p class="font-semibold mt-2">Educational Chains</p></div>
-                        <div class="p-4 bg-gray-50 rounded-lg"><span class="text-3xl">🎧</span><p class="font-semibold mt-2">BPO / KPO</p></div>
-                        <div class="p-4 bg-gray-50 rounded-lg"><span class="text-3xl">🚀</span><p class="font-semibold mt-2">Series B Funded: Startups</p></div>
+                        <div class="p-4 bg-gray-50 rounded-lg"><span class="text-3xl">🏢</span><p class="font-semibold mt-2">Large Enterprises (>1000 people) <br><span class="text-xs text-gray-500">(~1,200 companies)</span></p></div>
+                        <div class="p-4 bg-gray-50 rounded-lg"><span class="text-3xl">💼</span><p class="font-semibold mt-2">MSME <br><span class="text-xs text-gray-500">(~63 Million+ businesses)</span></p></div>
+                        <div class="p-4 bg-gray-50 rounded-lg"><span class="text-3xl">🎓</span><p class="font-semibold mt-2">Educational Institutes (>1000 students) <br><span class="text-xs text-gray-500">(~1,100+ large institutions)</span></p></div>
+                        <div class="p-4 bg-gray-50 rounded-lg"><span class="text-3xl">🏦</span><p class="font-semibold mt-2">BFSI/Fintech (>1000 employees) <br><span class="text-xs text-gray-500">(Hundreds of key players)</span></p></div>
+                        <div class="p-4 bg-gray-50 rounded-lg"><span class="text-3xl">📞</span><p class="font-semibold mt-2">BPO/KPO <br><span class="text-xs text-gray-500">(Thousands of companies)</span></p></div>
+                        <div class="p-4 bg-gray-50 rounded-lg"><span class="text-3xl">🚀</span><p class="font-semibold mt-2">Series B funded Startups <br><span class="text-xs text-gray-500">(Hundreds of high-growth companies)</span></p></div>
                     </div>
                 </div>
-                <div class="bg-white p-8 rounded-xl shadow-lg">
-                    <h3 class="text-2xl font-bold c-primary mb-4 text-center">India Footprint & Expansion</h3>
-                    <div class="flex flex-col space-y-4 text-gray-600">
-                        <p><span class="font-semibold text-c-primary">Deepen & Dominate:</span> Bangalore, Hyderabad, Pune</p>
-                        <p><span class="font-semibold text-c-secondary">Aggressive Expansion:</span> Delhi NCR, Mumbai, Chennai, Ahmedabad</p>
-                        <p><span class="font-semibold text-yellow-500">Rapid Hub Development:</span> Kolkata, Jaipur, Chandigarh, Lucknow, Indore, Coimbatore, Kochi, Visakhapatnam, Bhopal</p>
-                    </div>
-                </div>
-            </div>
-             <div class="max-w-3xl mx-auto mt-12 text-center">
-                <h3 class="text-2xl font-bold c-primary mb-4">Beyond India: Global Horizon 🌏</h3>
-                <p class="text-gray-600">Phase 2 will see targeted launches into Southeast Asia (Singapore, Malaysia) and the Middle East (UAE), focusing on enterprise-level deals leveraging our established Pan-India success and existing Indian MNC client relationships.</p>
             </div>
         </section>
 
-        <!-- Sales Frameworks -->
-        <section id="frameworks" class="fade-in-section my-16 md:my-24">
-            <h2 class="text-3xl md:text-4xl font-bold text-center c-primary mb-12">My Sales Execution Engine</h2>
+        <section id="q4-execution" class="fade-in-section my-16 md:my-24">
+            <h2 class="q-section-heading">Q4: How Exactly Will We Execute?</h2>
             
-            <!-- Sales Acceleration Framework -->
-            <div class="mb-12">
-                <h3 class="text-2xl font-bold c-primary mb-6 text-center">Sales Acceleration Framework</h3>
-                <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 text-center">
-                    <div class="flex items-center md:flex-col">
-                        <div class="bg-white p-6 rounded-xl shadow-lg flex-grow">
-                           <div class="bg-c-primary text-white w-10 h-10 rounded-full flex items-center justify-center mx-auto text-xl font-bold mb-3">1</div>
-                           <h4 class="font-bold">Deep Discovery</h4>
-                        </div>
-                        <div class="text-2xl c-secondary mx-4 md:my-4 md:mx-0">➔</div>
-                    </div>
-                    <div class="flex items-center md:flex-col">
-                         <div class="bg-white p-6 rounded-xl shadow-lg flex-grow">
-                           <div class="bg-c-primary text-white w-10 h-10 rounded-full flex items-center justify-center mx-auto text-xl font-bold mb-3">2</div>
-                           <h4 class="font-bold">Solution Co-creation</h4>
-                        </div>
-                        <div class="text-2xl c-secondary mx-4 md:my-4 md:mx-0">➔</div>
-                    </div>
-                    <div class="flex items-center md:flex-col">
-                         <div class="bg-white p-6 rounded-xl shadow-lg flex-grow">
-                           <div class="bg-c-primary text-white w-10 h-10 rounded-full flex items-center justify-center mx-auto text-xl font-bold mb-3">3</div>
-                           <h4 class="font-bold">Value Articulation</h4>
-                        </div>
-                        <div class="text-2xl c-secondary mx-4 md:my-4 md:mx-0">➔</div>
-                    </div>
-                    <div class="flex items-center md:flex-col">
-                         <div class="bg-white p-6 rounded-xl shadow-lg flex-grow">
-                           <div class="bg-c-primary text-white w-10 h-10 rounded-full flex items-center justify-center mx-auto text-xl font-bold mb-3">4</div>
-                           <h4 class="font-bold">Executive Engagement</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Hunter/Farmer & BANT/SPIN -->
+            <h3 class="text-2xl md:text-3xl font-bold text-center c-primary mb-2">Specialized Roles & Predictive Methodologies</h3>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div class="bg-white p-8 rounded-xl shadow-lg">
-                    <h3 class="text-2xl font-bold c-primary mb-4 text-center">Sales Team Structure</h3>
-                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <h4 class="text-2xl font-bold c-primary mb-4 text-center">Roles: Hunters, Farmers and Sales Operations</h4>
+                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <div class="text-center p-4 border-2 border-c-secondary rounded-lg">
                             <span class="text-4xl">🏹</span>
-                            <h4 class="text-xl font-bold mt-2">Hunters</h4>
-                            <p class="text-gray-600">New Logo Acquisition. Highly incentivized to bring in large enterprise deals.</p>
-                            <p class="font-bold c-primary mt-2">Drives 70-80% of New Revenue</p>
+                            <h5 class="text-xl font-bold mt-2">Hunters</h5>
+                            <p class="text-gray-600">Focus: New logo acquisition, initial 'big ticket' orders (<span class="font-bold">100-500 laptops</span>). </p>
+                            <p class="font-bold c-primary mt-2">Awarded on onboarding client & first order. Drives 70-80% of New Revenue.</p>
+                            <p class="text-gray-600 text-xs mt-2">Responsible for lead gen, networking, prospecting, and developing new avenues (projectors, displays etc.).</p>
                         </div>
                          <div class="text-center p-4 border-2 border-gray-300 rounded-lg">
                             <span class="text-4xl">🧑‍🌾</span>
-                            <h4 class="text-xl font-bold mt-2">Farmers</h4>
-                            <p class="text-gray-600">Existing Account Expansion. Focused on retention, upsell, and cross-sell.</p>
-                             <p class="font-bold c-primary mt-2">Ensures High NRR & LTV</p>
+                            <h5 class="text-xl font-bold mt-2">Farmers</h5>
+                            <p class="text-gray-600">Focus: Client growth & retention, maximizing potential (average <span class="font-bold">500 laptops/client</span>).</p>
+                             <p class="font-bold c-primary mt-2">Awarded on upsell/cross-sell & client retention. Ensures High NRR & LTV.</p>
+                             <p class="text-gray-600 text-xs mt-2">Ensures low rental inventory, interfaces with CRM for smooth execution & customer service.</p>
+                        </div>
+                        <div class="text-center p-4 border-2 border-gray-400 rounded-lg">
+                            <span class="text-4xl">📊</span>
+                            <h5 class="text-xl font-bold mt-2">Sales Operations</h5>
+                            <p class="text-gray-600">Provides critical support for Hunters and Farmers in MIS, database management, and analytics. Does not directly acquire or grow business.</p>
                         </div>
                     </div>
                 </div>
                  <div class="bg-white p-8 rounded-xl shadow-lg">
-                    <h3 class="text-2xl font-bold c-primary mb-4 text-center">Predictive Sales Methodologies</h3>
+                    <h4 class="text-2xl font-bold c-primary mb-4 text-center">Predictive Sales Methodologies</h4>
                      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="text-center p-4 bg-gray-50 rounded-lg">
-                             <h4 class="text-xl font-bold">BANT for Hunting</h4>
-                             <p class="text-gray-600 mt-2">Qualify leads for <span class="font-semibold">B</span>udget, <span class="font-semibold">A</span>uthority, <span class="font-semibold">N</span>eed, and <span class="font-semibold">T</span>imeline to ensure maximum efficiency.</p>
+                             <h5 class="text-xl font-bold">BANT for Hunting 🏹</h5>
+                             <p class="text-gray-600 mt-2">Qualify leads for <span class="font-bold">B</span>udget, <span class="font-bold">A</span>uthority, <span class="font-bold">N</span>eed, and <span class="font-bold">T</span>imeline to ensure maximum efficiency.</p>
                         </div>
                          <div class="text-center p-4 bg-gray-50 rounded-lg">
-                            <h4 class="text-xl font-bold">SPIN for Farming</h4>
-                            <p class="text-gray-600 mt-2">Uncover deeper needs by discussing <span class="font-semibold">S</span>ituation, <span class="font-semibold">P</span>roblem, <span class="font-semibold">I</span>mplication, and <span class="font-semibold">N</span>eed-Payoff.</p>
+                            <h5 class="text-xl font-bold">SPIN for Farming 🧑‍🌾</h5>
+                            <p class="text-gray-600 mt-2">Uncover deeper needs by discussing <span class="font-bold">S</span>ituation, <span class="font-bold">P</span>roblem, <span class="font-bold">I</span>mplication, and <span class="font-bold">N</span>eed-Payoff.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- My Track Record: Proven Impact & Leadership -->
-        <section id="track-record" class="fade-in-section my-16 md:my-24">
-            <h2 class="text-3xl md:text-4xl font-bold text-center c-primary mb-2">My Track Record: Proven Impact & Leadership</h2>
-            <p class="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">My career is marked by tangible results in scaling businesses, expanding markets, and building high-performing teams.</p>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <section id="q5-team-scaling" class="fade-in-section my-16 md:my-24">
+            <h2 class="q-section-heading">Q5: What is the Team Required to Hit the Target?</h2>
+
+            <div class="bg-white p-8 rounded-xl shadow-lg mb-12">
+                <h4 class="text-2xl font-bold c-primary mb-4 text-center">The Big Picture: Laptops to Crores</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-center text-gray-700 font-semibold">
+                    <div>
+                        <span class="text-4xl c-secondary">₹1000 Cr</span>
+                        <p>Annual Revenue Target</p>
+                    </div>
+                    <div>
+                        <span class="text-4xl c-secondary">~3,33,333 💻</span>
+                        <p>Annual Laptop Equivalent (@ ₹2500/month/laptop)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-xl shadow-lg">
+                <h3 class="text-2xl font-bold c-primary mb-4 text-center">What are the Growth Projections?</h3>
+                <h4 class="text-xl font-bold c-primary mb-4 text-center mt-6">Productivity per Sales Professional:</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-center text-gray-700 font-semibold mb-8">
+                    <div class="flex flex-col items-center">
+                        <span class="text-4xl c-secondary">🎯</span>
+                        <p class="text-base font-semibold mt-2">Each hunter will be targeted to bring <span class="font-bold">15 logos</span> - 10 new Tier 1 logos (with upside of 1000 laptops), annually and 5 other logos. Focus will be on Tier 1, the needle mover.</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <span class="text-4xl c-secondary">📈</span>
+                        <p class="text-base font-semibold mt-2">The farming team will ensure that we do the extra <span class="font-bold">31,333 laptops</span> in Year 1, by strategically serving the Tier 1, and expanding them to do <span class="font-bold">51,333 laptops</span>.</p>
+                    </div>
+                </div>
+
+                <h3 class="text-2xl font-bold c-primary mb-4 text-center">Sales Force Scaling: Year-by-Year</h3>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white border border-gray-200 rounded-lg shadow-sm">
+                        <thead>
+                            <tr class="bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
+                                <th class="py-3 px-6 text-left">Metric</th>
+                                <th class="py-3 px-6 text-center">Year 1 (FY25-26)</th>
+                                <th class="py-3 px-6 text-center">Year 2 (FY26-27)</th>
+                                <th class="py-3 px-6 text-center">Year 3 (FY27-28)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-700 text-sm font-medium">
+                            <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                <td class="py-3 px-6 text-left whitespace-nowrap">Annual Revenue Target (Cr)</td>
+                                <td class="py-3 px-6 text-center">154</td>
+                                <td class="py-3 px-6 text-center">394</td>
+                                <td class="py-3 px-6 text-center">1000</td>
+                            </tr>
+                             <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                <td class="py-3 px-6 text-left whitespace-nowrap">Total Laptops (Annualized)</td>
+                                <td class="py-3 px-6 text-center">51,333</td>
+                                <td class="py-3 px-6 text-center">131,333</td>
+                                <td class="py-3 px-6 text-center">333,333</td>
+                            </tr>
+                            <tr class="border-b border-gray-200 hover:bg-gray-50 bg-blue-50">
+                                <td class="py-3 px-6 text-left whitespace-nowrap font-bold">Net New Laptops Needed (Year-on-Year)</td>
+                                <td class="py-3 px-6 text-center">31,333</td>
+                                <td class="py-3 px-6 text-center">80,000</td>
+                                <td class="py-3 px-6 text-center">202,000</td>
+                            </tr>
+                            <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                <td class="py-3 px-6 text-left font-bold">New Hunters Required (Annual)</td>
+                                <td class="py-3 px-6 text-center">10</td>
+                                <td class="py-3 px-6 text-center">11</td>
+                                <td class="py-3 px-6 text-center">28</td>
+                            </tr>
+                            <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                <td class="py-3 px-6 text-left font-bold">New Farmers Required (Annual)</td>
+                                <td class="py-3 px-6 text-center">4</td>
+                                <td class="py-3 px-6 text-center">5</td>
+                                <td class="py-3 px-6 text-center">12</td>
+                            </tr>
+                            <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                <td class="py-3 px-6 text-left font-bold">Sales Operations Analysts</td>
+                                <td class="py-3 px-6 text-center">2</td>
+                                <td class="py-3 px-6 text-center">3</td>
+                                <td class="py-3 px-6 text-center">4</td>
+                            </tr>
+                             <tr class="border-b border-gray-200 hover:bg-gray-50 bg-blue-50">
+                                <td class="py-3 px-6 text-left whitespace-nowrap font-bold">Total Sales Team (Cumulative at Year-End)</td>
+                                <td class="py-3 px-6 text-center">17</td>
+                                <td class="py-3 px-6 text-center">34</td>
+                                <td class="py-3 px-6 text-center">74</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="text-sm text-left text-gray-500 mt-4">
+                    *Laptop revenue: INR 2500/month/laptop * 12 months/year = INR 30,000/year/laptop (meaning 1 Cr revenue = ~333.33 laptops/year).<br>
+                    *Hunter contribution to Net New Laptops: ~70%; Farmer contribution to Net New Laptops: ~30%.<br>
+                    *Total Sales Team cumulative figures include Sales Head (1) and Sales Operations Analysts.<br>
+                    *Year 1 'New Hunters/Farmers Required' sums to 14, to meet the target of 15 total reps (14 excl. head) from the initial 4 reps, accounting for a ramp-up phase.<br>
+                    *Year 2 and Year 3 new hires are based on 5,000 Laptops/rep annual productivity.<br>
+                    *The revenue growth trajectory is designed to hit the 1000 Cr target by Year 3, averaging approximately 156% CAGR (2.56x factor) for initial years, with accelerated growth in Year 3 to achieve the final target.
+                </p>
+            </div>
+        </section>
+
+        <section id="sales-geo-distribution" class="fade-in-section my-16 md:my-24">
+            <h2 class="q-section-heading">What will be Geographical Distribution?</h2>
+            <p class="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">Strategic deployment of sales talent across key Indian markets to maximize penetration and coverage.</p>
+            
+            <div class="overflow-x-auto max-w-5xl mx-auto">
+                <table class="min-w-full bg-white border border-gray-200 rounded-lg shadow-sm">
+                    <thead>
+                        <tr class="bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
+                            <th class="py-3 px-6 text-left">Zone / City Focus</th>
+                            <th class="py-3 px-6 text-center">Year 1 (FY25-26)</th>
+                            <th class="py-3 px-6 text-center">Year 2 (FY26-27)</th>
+                            <th class="py-3 px-6 text-center">Year 3 (FY27-28)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-700 text-sm font-medium">
+                        <tr class="border-b border-gray-200 hover:bg-gray-50">
+                            <td class="py-3 px-6 text-left font-bold whitespace-nowrap">Total Sales Reps (Excl. Head & Sales Ops)</td>
+                            <td class="py-3 px-6 text-center">14</td>
+                            <td class="py-3 px-6 text-center">30</td>
+                            <td class="py-3 px-6 text-center">69</td>
+                        </tr>
+                        <tr class="border-b border-gray-200 hover:bg-gray-50 bg-blue-50">
+                            <td class="py-3 px-6 text-left font-bold">South Zone</td>
+                            <td class="py-3 px-6 text-center">5</td>
+                            <td class="py-3 px-6 text-center">10</td>
+                            <td class="py-3 px-6 text-center">20</td>
+                        </tr>
+                        <tr class="border-b border-gray-200 hover:bg-gray-50">
+                            <td class="py-3 px-6 text-left pl-10">Bangalore</td>
+                            <td class="py-3 px-6 text-center">2</td>
+                            <td class="py-3 px-6 text-center">4</td>
+                            <td class="py-3 px-6 text-center">8</td>
+                        </tr>
+                        <tr class="border-b border-gray-200 hover:bg-gray-50">
+                            <td class="py-3 px-6 text-left pl-10">Hyderabad</td>
+                            <td class="py-3 px-6 text-center">2</td>
+                            <td class="py-3 px-6 text-center">4</td>
+                            <td class="py-3 px-6 text-center">7</td>
+                        </tr>
+                        <tr class="border-b border-gray-200 hover:bg-gray-50">
+                            <td class="py-3 px-6 text-left pl-10">Pune</td>
+                            <td class="py-3 px-6 text-center">1</td>
+                            <td class="py-3 px-6 text-center">2</td>
+                            <td class="py-3 px-6 text-center">3</td>
+                        </tr>
+                         <tr class="border-b border-gray-200 hover:bg-gray-50">
+                            <td class="py-3 px-6 text-left pl-10">Chennai</td>
+                            <td class="py-3 px-6 text-center">0</td>
+                            <td class="py-3 px-6 text-center">0</td>
+                            <td class="py-3 px-6 text-center">2</td>
+                        </tr>
+                        <tr class="border-b border-gray-200 hover:bg-gray-50 bg-blue-50">
+                            <td class="py-3 px-6 text-left font-bold">North Zone</td>
+                            <td class="py-3 px-6 text-center">4</td>
+                            <td class="py-3 px-6 text-center">9</td>
+                            <td class="py-3 px-6 text-center">18</td>
+                        </tr>
+                        <tr class="border-b border-gray-200 hover:bg-gray-50">
+                            <td class="py-3 px-6 text-left pl-10">Delhi NCR</td>
+                            <td class="py-3 px-6 text-center">3</td>
+                            <td class="py-3 px-6 text-center">7</td>
+                            <td class="py-3 px-6 text-center">13</td>
+                        </tr>
+                        <tr class="border-b border-gray-200 hover:bg-gray-50">
+                            <td class="py-3 px-6 text-left pl-10">Chandigarh</td>
+                            <td class="py-3 px-6 text-center">1</td>
+                            <td class="py-3 px-6 text-center">1</td>
+                            <td class="py-3 px-6 text-center">2</td>
+                        </tr>
+                        <tr class="border-b border-gray-200 hover:bg-gray-50">
+                            <td class="py-3 px-6 text-left pl-10">Lucknow</td>
+                            <td class="py-3 px-6 text-center">0</td>
+                            <td class="py-3 px-6 text-center">1</td>
+                            <td class="py-3 px-6 text-center">3</td>
+                        </tr>
+                        <tr class="border-b border-gray-200 hover:bg-gray-50 bg-blue-50">
+                            <td class="py-3 px-6 text-left font-bold">West Zone</td>
+                            <td class="py-3 px-6 text-center">4</td>
+                            <td class="py-3 px-6 text-center">9</td>
+                            <td class="py-3 px-6 text-center">17</td>
+                        </tr>
+                        <tr class="border-b border-gray-200 hover:bg-gray-50">
+                            <td class="py-3 px-6 text-left pl-10">Mumbai</td>
+                            <td class="py-3 px-6 text-center">3</td>
+                            <td class="py-3 px-6 text-center">6</td>
+                            <td class="py-3 px-6 text-center">10</td>
+                        </tr>
+                        <tr class="border-b border-gray-200 hover:bg-gray-50">
+                            <td class="py-3 px-6 text-left pl-10">Ahmedabad</td>
+                            <td class="py-3 px-6 text-center">1</td>
+                            <td class="py-3 px-6 text-center">1</td>
+                            <td class="py-3 px-6 text-center">2</td>
+                        </tr>
+                        <tr class="border-b border-gray-200 hover:bg-gray-50">
+                            <td class="py-3 px-6 text-left pl-10">Indore</td>
+                            <td class="py-3 px-6 text-center">0</td>
+                            <td class="py-3 px-6 text-center">2</td>
+                            <td class="py-3 px-6 text-center">5</td>
+                        </tr>
+                        <tr class="border-b border-gray-200 hover:bg-gray-50 bg-blue-50">
+                            <td class="py-3 px-6 text-left font-bold">East Zone</td>
+                            <td class="py-3 px-6 text-center">1</td>
+                            <td class="py-3 px-6 text-center">6</td>
+                            <td class="py-3 px-6 text-center">14</td>
+                        </tr>
+                        <tr class="border-b border-gray-200 hover:bg-gray-50">
+                            <td class="py-3 px-6 text-left pl-10">Kolkata</td>
+                            <td class="py-3 px-6 text-center">1</td>
+                            <td class="py-3 px-6 text-center">3</td>
+                            <td class="py-3 px-6 text-center">6</td>
+                        </tr>
+                        <tr class="border-b border-gray-200 hover:bg-gray-50">
+                            <td class="py-3 px-6 text-left pl-10">Visakhapatnam</td>
+                            <td class="py-3 px-6 text-center">0</td>
+                            <td class="py-3 px-6 text-center">2</td>
+                            <td class="py-3 px-6 text-center">4</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="py-3 px-6 text-left pl-10">Bhopal</td>
+                            <td class="py-3 px-6 text-center">0</td>
+                            <td class="py-3 px-6 text-center">1</td>
+                            <td class="py-3 px-6 text-center">4</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-sm text-left text-gray-500 mt-4">
+                *Sales Reps shown here exclude the Sales Head (1) and Sales Operations Analysts. Distribution is illustrative based on market potential and talent acquisition strategy.
+            </p>
+        </section>
+
+        <section id="sales-team-structure" class="fade-in-section my-16 md:my-24">
+            <h2 class="q-section-heading">How will we Build the Hyper-Growth Sales Team?</h2>
+            <p class="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">Our sales organization will scale strategically to meet and exceed our targets, built on specialized roles and a culture of high performance.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+                    <div class="text-5xl c-secondary mb-4">🎯</div>
+                    <h3 class="text-xl font-bold c-primary mb-2">Specialized Roles</h3>
+                    <p class="text-gray-600">Clear distinction between 'Hunters' for new logo acquisition and 'Farmers' for maximizing existing client potential.</p>
+                </div>
                 <div class="bg-white p-8 rounded-xl shadow-lg text-center">
                     <div class="text-5xl c-secondary mb-4">📈</div>
-                    <h3 class="text-xl font-bold c-primary mb-2">Startup to Global Leader</h3>
-                    <p class="text-gray-600">Pivotal role in Beroe's transformation. Pioneered APAC expansion, acquired leading government & private companies.</p>
+                    <h3 class="text-xl font-bold c-primary mb-2">Aggressive Talent Acquisition</h3>
+                    <p class="text-gray-600">Recruiting top-tier sales professionals: **Starting with 3 reps, scaling to ~71 sales reps (ICs) by Year 3** (excluding Sales Head) to manage exponential growth.</p>
                 </div>
                 <div class="bg-white p-8 rounded-xl shadow-lg text-center">
-                    <div class="text-5xl c-secondary mb-4">🌟</div>
-                    <h3 class="text-xl font-bold c-primary mb-2">Fortune 500 Client Acquisition</h3>
-                    <p class="text-gray-600">Brought in 20+ Fortune logos at Evalueserve, significantly enhancing market standing.</p>
+                     <div class="text-5xl c-secondary mb-4">🥇</div>
+                    <h3 class="text-xl font-bold c-primary mb-2">Performance-Driven Culture</h3>
+                    <p class="text-gray-600">Structured incentives rewarding new client acquisition and the growth/retention of high-potential accounts.</p>
                 </div>
                 <div class="bg-white p-8 rounded-xl shadow-lg text-center">
-                     <div class="text-5xl c-secondary mb-4">🚀</div>
-                    <h3 class="text-xl font-bold c-primary mb-2">Startup Scaling & Funding</h3>
-                    <p class="text-gray-600">Co-founded DRUT, enabling growth, funding, and acquisitions for 6 B2B startups.</p>
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
-                    <div class="text-5xl c-secondary mb-4">🏅</div>
-                    <h3 class="text-xl font-bold c-primary mb-2">Award-Winning Leadership</h3>
-                    <p class="text-gray-600">Recipient of Evalueserve's prestigious Chairman Award for outstanding contributions.</p>
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
-                    <div class="text-5xl c-secondary mb-4">🌐</div>
-                    <h3 class="text-xl font-bold c-primary mb-2">Global Market Expertise</h3>
-                    <p class="text-gray-600">18 years of B2B sales experience across US, China, UAE, India, KSA, Switzerland, Germany.</p>
-                </div>
-                 <div class="bg-white p-8 rounded-xl shadow-lg text-center">
-                    <div class="text-5xl c-secondary mb-4">💡</div>
-                    <h3 class="text-xl font-bold c-primary mb-2">Innovation & Digital Products</h3>
-                    <p class="text-gray-600">Successfully launched 2 groundbreaking digital procurement intelligence products at Evalueserve.</p>
+                     <div class="text-5xl c-secondary mb-4">📊</div>
+                    <h3 class="text-xl font-bold c-primary mb-2">Robust Sales Operations</h3>
+                    <p class="text-gray-600">Dedicated support for MIS, databases, and analytics to drive efficiency for Hunters and Farmers.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Data Driven Culture -->
-        <section id="data" class="fade-in-section my-16 md:my-24">
-            <h2 class="text-3xl md:text-4xl font-bold text-center c-primary mb-2">A Data-Driven Sales Culture</h2>
-            <p class="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">Sales under my leadership is a science. We will use real-time data to make agile decisions, predict outcomes, and drive performance.</p>
+        <section id="q8-sales-approach" class="fade-in-section my-16 md:my-24">
+            <h2 class="q-section-heading">Q8: How will the Sales Team Operate?</h2>
+            <p class="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">Our operational philosophy is rooted in efficiency, intelligence, and continuous improvement, ensuring every sales activity contributes directly to hyper-growth.</p>
+            
+            <h3 class="text-2xl md:text-3xl font-bold text-center c-primary mb-2">Our Sales Team Approach</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white p-6 rounded-xl shadow-lg flex items-start space-x-4">
+                    <span class="text-3xl c-secondary">🔬</span>
+                    <div>
+                        <h4 class="font-bold">Scientific Approach to Sales: Do More with Less</h4>
+                        <p class="text-sm text-gray-600">Leveraging data and insights to optimize every stage of the sales funnel, minimizing wasted effort and maximizing conversion.</p>
+                    </div>
+                </div>
+                 <div class="bg-white p-6 rounded-xl shadow-lg flex items-start space-x-4">
+                    <span class="text-3xl c-secondary">👁️‍🗨️</span>
+                    <div>
+                        <h4 class="font-bold">Real-time Visibility & Action</h4>
+                        <p class="text-sm text-gray-600">Implementing robust MIS and dashboards for live tracking of sales progress, enabling immediate tactical adjustments.</p>
+                    </div>
+                </div>
+                 <div class="bg-white p-6 rounded-xl shadow-lg flex items-start space-x-4">
+                    <span class="text-3xl c-secondary">📈</span>
+                    <div>
+                        <h4 class="font-bold">Clear KPIs & Dynamic Growth Plans</h4>
+                        <p class="text-sm text-gray-600">Setting ambitious yet achievable Key Performance Indicators for all roles, with agile planning to adapt to market shifts and accelerate growth.</p>
+                    </div>
+                </div>
+                 <div class="bg-white p-6 rounded-xl shadow-lg flex items-start space-x-4">
+                    <span class="text-3xl c-secondary">🧠</span>
+                    <div>
+                        <h4 class="font-bold">Continuous Learning & Adaptation</h4>
+                        <p class="text-sm text-gray-600">Fostering a culture of ongoing training, market intelligence, and iterative refinement of sales strategies and tactics.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="q9-measurement" class="fade-in-section my-16 md:my-24">
+            <h2 class="q-section-heading">Q9: How Will We Measure Success?</h2>
+            <p class="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">Every strategic move is backed by data, ensuring maximum efficiency, predictable growth, and ultimate success. Our sales culture is scientifically driven by clear metrics and real-time insights.</p>
+            
+            <h3 class="text-2xl md:text-3xl font-bold text-center c-primary mb-2">A Data-Driven Sales Culture</h3>
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 <div class="bg-white p-6 rounded-xl shadow-lg">
                     <h4 class="font-bold text-gray-500 text-sm">Revenue Growth (YTD)</h4>
@@ -505,9 +554,10 @@
             </div>
         </section>
 
-        <!-- Risk Mitigation -->
-        <section id="risks" class="fade-in-section my-16 md:my-24">
-            <h2 class="text-3xl md:text-4xl font-bold text-center c-primary mb-2">Mitigating Risk, Ensuring Stability</h2>
+        <section id="q7-risks" class="fade-in-section my-16 md:my-24">
+            <h2 class="q-section-heading">Q7: What Could Go Wrong?</h2>
+            
+            <h3 class="text-2xl md:text-3xl font-bold text-center c-primary mb-2">Mitigating Risk, Ensuring Stability</h3>
             <p class="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">A good leader anticipates challenges. For every potential risk on our journey, there is a proactive mitigation strategy.</p>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="bg-white p-6 rounded-xl shadow-lg flex items-start space-x-4">
@@ -529,6 +579,162 @@
                     <div>
                         <h4 class="font-bold">Competitive Pressure</h4>
                         <p class="text-sm text-gray-600">🛡️ <span class="font-semibold">Mitigation:</span> Focus on value-selling, superior service, strategic alliances.</p>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="q8-why-me" class="fade-in-section my-16 md:my-24">
+            <h2 class="q-section-heading">Q8: Why Me?</h2>
+            <p class="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">My extensive experience, leadership capabilities, and entrepreneurial spirit align perfectly with C Prompt's hyper-growth ambitions.</p>
+            
+            <h3 class="text-2xl md:text-3xl font-bold text-center c-primary mb-2">My Journey: The Foundation for Hyper-Growth</h3>
+            <p class="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">My 18 years of diverse experience in sales, consulting, and entrepreneurship provides a unique blend of expertise for this challenge.</p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <h4 class="text-2xl font-bold c-primary mb-4">Key Milestones</h4>
+                    <div class="space-y-4">
+                        <div class="timeline-item">
+                            <h5 class="font-semibold text-lg">2001-2004: BSc (Allahabad University)</h5>
+                            <p class="text-gray-600">Mathematics and Computers.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h5 class="font-semibold text-lg">2005-2007: MBA (NMIMS)</h5>
+                            <p class="text-gray-600">Strong academic foundation in Marketing & IT.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h5 class="font-semibold text-lg">2007-2008: Aditya Birla Leadership Program (ABGLP)</h5>
+                            <p class="text-gray-600">Management Trainee, worked on business strategy enhancement for Jayashree Textile and Madura Garments.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h5 class="font-semibold text-lg">2008-2010: Evalueserve (1st Stint)</h5>
+                            <p class="text-gray-600">Manager - Business Research, leading multicultural teams, executing 100s of projects.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h5 class="font-semibold text-lg">2010-2016: Beroe (Director Sales - APAC)</h5>
+                            <p class="text-gray-600">Pivotal role in transforming Beroe from startup to global leader; pioneered APAC expansion, client acquisitions in UAE, KSA, India.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h5 class="font-semibold text-lg">2016-2018: Evalueserve (2nd Stint - AVP)</h5>
+                            <p class="text-gray-600">Led Global Procurement Intelligence Practice, launched 2 digital products, brought in 20+ Fortune 500 logos.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h5 class="font-semibold text-lg">2018-2023: Co-Founder, DRUT</h5>
+                            <p class="text-gray-600">Enabled growth, funding, and acquisitions for 6 B2B startups; setup large inside sales teams.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h5 class="font-semibold text-lg">2023-Present: Co-Founder, Taiyaar</h5>
+                            <p class="text-gray-600">Launched HR marketplace, gained valuable tech experience, empowering raw talent from smaller cities.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg flex flex-col justify-center items-center">
+                    <h3 class="text-2xl font-bold c-primary mb-4 text-center">My Core Strengths</h3>
+                    <div class="grid grid-cols-2 gap-4 text-center w-full">
+                        <div class="p-4 bg-gray-50 rounded-lg">
+                            <span class="text-4xl">💼</span>
+                            <p class="font-semibold mt-2">18 Years Consultative Sales</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg">
+                            <span class="text-4xl">B2B</span>
+                            <p class="font-semibold mt-2">B2B Sales Expert</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg">
+                            <span class="text-4xl">🚀</span>
+                            <p class="font-semibold mt-2">2X Entrepreneur</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg">
+                            <span class="text-4xl">✈️</span>
+                            <p class="font-semibold mt-2">Global Experience</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg col-span-2">
+                             <span class="text-4xl">💡</span>
+                            <p class="font-semibold mt-2">Data Science & AI Advocate</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="q8-track-record" class="fade-in-section my-16 md:my-24">
+            <h3 class="text-2xl md:text-3xl font-bold text-center c-primary mb-2">My Track Record: Proven Impact & Leadership</h3>
+            <p class="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">My career is marked by tangible results in scaling businesses, expanding markets, and building high-performing teams.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+                    <div class="text-5xl c-secondary mb-4">📈</div>
+                    <h4 class="text-xl font-bold c-primary mb-2">Startup to Global Leader</h4>
+                    <p class="text-gray-600">Pivotal role in Beroe's transformation. Pioneered APAC expansion, acquired leading government & private companies.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+                    <div class="text-5xl c-secondary mb-4">🌟</div>
+                    <h4 class="text-xl font-bold c-primary mb-2">Fortune 500 Client Acquisition</h4>
+                    <p class="text-gray-600">Brought in 20+ Fortune logos at Evalueserve, significantly enhancing market standing.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+                     <div class="text-5xl c-secondary mb-4">🚀</div>
+                    <h3 class="text-xl font-bold c-primary mb-2">Startup Scaling & Funding</h3>
+                    <p class="text-gray-600">Co-founded DRUT, enabling growth, funding, and acquisitions for 6 B2B startups.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+                    <div class="text-5xl c-secondary mb-4">🏅</div>
+                    <h3 class="text-xl font-bold c-primary mb-2">Award-Winning Leadership</h3>
+                    <p class="text-gray-600">Recipient of Evalueserve's prestigious Chairman Award for outstanding contributions.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+                    <div class="text-5xl c-secondary mb-4">🌐</div>
+                    <h3 class="text-xl font-bold c-primary mb-2">Global Market Expertise</h3>
+                    <p class="text-gray-600">18 years of B2B sales experience across US, China, UAE, India, KSA, Switzerland, Germany.</p>
+                </div>
+                 <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+                    <div class="text-5xl c-secondary mb-4">💡</div>
+                    <h3 class="text-xl font-bold c-primary mb-2">Innovation & Digital Products</h3>
+                    <p class="text-gray-600">Successfully launched 2 groundbreaking digital procurement intelligence products at Evalueserve.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="q8-my-brand" class="fade-in-section my-16 md:my-24">
+            <h3 class="text-2xl md:text-3xl font-bold text-center c-primary mb-2">My Brand: Leadership & Impact</h3>
+            <p class="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">Beyond the resume, my commitment to leadership, innovation, and industry contribution speaks for itself.</p>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center flex flex-col items-center">
+                    <div class="w-32 h-32 rounded-full bg-gray-200 flex items-center justify-center overflow-hidden mb-4">
+                        <img src="vishal.jpg" alt="Vishal Makhija" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="text-xl font-bold c-primary mb-2">Connect with Me</h4>
+                    <p class="text-gray-600 mb-4">Find my professional journey and thought leadership on LinkedIn.</p>
+                    <a href="https://www.linkedin.com/in/vishal-makhija-66898751/" target="_blank" class="bg-c-secondary text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-blue-400 transition-colors">
+                        LinkedIn Profile ▶️
+                    </a>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center lg:col-span-2">
+                    <h4 class="text-2xl font-bold c-primary mb-4">Recognitions & Public Voice</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div class="bg-gray-50 p-4 rounded-lg flex items-center justify-center space-x-3">
+                            <span class="text-3xl">🏆</span>
+                            <p class="font-semibold text-gray-800">Chairman Award Recipient (Evalueserve)</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg flex items-center justify-center space-x-3">
+                            <span class="text-3xl">🏅</span>
+                            <p class="font-semibold text-gray-800">Multiple Awards (Beroe, Evalueserve)</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg flex items-center justify-center space-x-3 col-span-full">
+                            <span class="text-3xl">🎤</span>
+                            <p class="font-semibold text-gray-800">Speaker at various conferences, including NASSCOM</p>
+                        </div>
+                    </div>
+                    <h4 class="text-xl font-bold c-primary mb-4">Featured Sales & Industry Insights</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <a href="https://www.youtube.com/watch?v=pZMWXlKUlQI" target="_blank" class="block rounded-lg shadow-md hover:shadow-lg transition-shadow overflow-hidden">
+                            <div class="video-thumbnail" style="background-image: url('https://img.youtube.com/vi/pZMWXlKUlQI/hqdefault.jpg');">
+                                </div>
+                            <p class="text-sm font-semibold text-gray-700 p-2">Decoding Future of Procurement: A Sales Perspective</p>
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=lgZgQcTifQM" target="_blank" class="block rounded-lg shadow-md hover:shadow-lg transition-shadow overflow-hidden">
+                            <div class="video-thumbnail" style="background-image: url('https://img.youtube.com/vi/lgZgQcTifQM/hqdefault.jpg');">
+                                </div>
+                            <p class="text-sm font-semibold text-gray-700 p-2">NISC 2019 - Sales Leadership Interview with Mr. Vishal Makhija</p>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -536,11 +742,10 @@
 
     </main>
     
-    <!-- Footer / CTA -->
     <footer class="bg-gray-800 text-white text-center py-16 px-4 mt-24">
         <h2 class="text-3xl font-bold">Let's Build This Future Together.</h2>
-        <p class="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">This vision is detailed, data-backed, and actionable. I have the framework and experience to lead this transformation. I am ready to build the future of CPrompt Solutions.</p>
-        <button class="mt-8 bg-c-secondary text-white font-bold py-3 px-8 rounded-full hover:bg-blue-400 transition-colors" onclick="document.getElementById('contact-header').scrollIntoView({ behavior: 'smooth' });">Schedule a Deeper Discussion</button>
+        <p class="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">This vision is detailed, data-backed, and actionable. I have the framework and experience to lead this transformation. I am ready to build the future of C Prompt Solutions.</p>
+        <button id="schedule-discussion-btn" class="mt-8 bg-c-secondary text-white font-bold py-3 px-8 rounded-full hover:bg-blue-400 transition-colors">Schedule a Deeper Discussion</button>
     </footer>
 
     <script>
@@ -596,10 +801,10 @@
         new Chart(revenueCtx, {
             type: 'bar',
             data: {
-                labels: ['Current', 'FY 2025-26', 'FY 2026-27', 'FY 2027-28'],
+                labels: ['Current', 'FY 25-26', 'FY 26-27', 'FY 27-28'],
                 datasets: [{
                     label: 'Revenue (in Cr)',
-                    data: [60, 214, 763, 1000],
+                    data: [60, 154, 394, 1000], /* Updated revenue targets */
                     backgroundColor: ['#42A5F5', '#42A5F5', '#42A5F5', '#0D47A1'],
                     borderColor: '#FFFFFF',
                     borderWidth: 2,
@@ -629,7 +834,9 @@
                             text: 'Revenue (in Crores)'
                         }
                     }
-                }
+                },
+                responsive: true,
+                maintainAspectRatio: false
             }
         });
 
@@ -649,6 +856,8 @@
             options: {
                 ...defaultChartOptions,
                 cutout: '70%',
+                 responsive: true,
+                maintainAspectRatio: false
             }
         });
 
@@ -692,8 +901,21 @@
                         }
                     }
                 },
+                 responsive: true,
+                maintainAspectRatio: false
             }
         });
+
+        // Smooth scroll for Schedule a Deeper Discussion button
+        const scheduleBtn = document.getElementById('schedule-discussion-btn');
+        if (scheduleBtn) {
+            scheduleBtn.addEventListener('click', function() {
+                const contactHeader = document.getElementById('contact-header');
+                if (contactHeader) {
+                    contactHeader.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            });
+        }
 
         // Fade in sections on scroll
         const sections = document.querySelectorAll('.fade-in-section');
@@ -707,66 +929,6 @@
 
         sections.forEach(section => {
             observer.observe(section);
-        });
-
-        // Gemini API Integration
-        const apiKey = ""; 
-
-        async function callGeminiAPI(prompt, outputElement, loadingElement) {
-            outputElement.classList.add('hidden');
-            loadingElement.classList.remove('hidden');
-            outputElement.innerHTML = ''; 
-
-            const chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
-            const payload = { contents: chatHistory };
-
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-
-            try {
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-                const result = await response.json();
-
-                if (result.candidates && result.candidates.length > 0 &&
-                    result.candidates[0].content && result.candidates[0].content.parts &&
-                    result.candidates[0].content.parts.length > 0) {
-                    const text = result.candidates[0].content.parts[0].text;
-                    outputElement.innerHTML = `<p>${text}</p>`;
-                } else {
-                    outputElement.innerHTML = `<p class="text-red-600">Error: Could not generate insight. Please try again.</p>`;
-                }
-            } catch (error) {
-                console.error('Error calling Gemini API:', error);
-                outputElement.innerHTML = `<p class="text-red-600">Error: Failed to connect to AI service.</p>`;
-            } finally {
-                loadingElement.classList.add('hidden');
-                outputElement.classList.remove('hidden');
-            }
-        }
-
-        // Market Insight Generator
-        const generateMarketInsightBtn = document.getElementById('generateMarketInsightBtn');
-        const marketInsightOutputDiv = document.getElementById('marketInsightOutput');
-        const marketInsightText = document.getElementById('marketInsightText');
-        const marketInsightLoading = document.getElementById('marketInsightLoading');
-
-        generateMarketInsightBtn.addEventListener('click', () => {
-            const prompt = `Given the current trends in the Indian Enterprise Asset Leasing and Global DaaS market (CAGR ~29%, value ~$106.8B, drivers like CapEx to OpEx shift, remote work, tech cycles), generate a concise, additional strategic insight that CPrompt Solutions could leverage for hyper-growth. Focus on an area not explicitly covered but implied by these trends.`;
-            callGeminiAPI(prompt, marketInsightText, marketInsightLoading);
-        });
-
-        // Strategic Alliance Brainstormer
-        const brainstormAlliancesBtn = document.getElementById('brainstormAlliancesBtn');
-        const allianceBrainstormOutputDiv = document.getElementById('allianceBrainstormOutput');
-        const allianceBrainstormText = document.getElementById('allianceBrainstormText');
-        const allianceBrainstormLoading = document.getElementById('allianceBrainstormLoading');
-
-        brainstormAlliancesBtn.addEventListener('click', () => {
-            const prompt = `For an IT equipment rental and DaaS company aiming for hyper-growth, brainstorm 3-4 specific types of strategic partners beyond general System Integrators and OEMs, focusing on how these partnerships could unlock new revenue streams or market access.`;
-            callGeminiAPI(prompt, allianceBrainstormText, allianceBrainstormLoading);
         });
     });
     </script>
