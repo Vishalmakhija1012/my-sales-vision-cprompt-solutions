@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Sales Vision: CPrompt Solutions to 1000 Cr</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- 
+    Chosen Palette: "CPrompt Corporate Blue" - Using #0D47A1 as primary, #42A5F5 as secondary, and #495057 for text to align with corporate branding while maintaining a modern, clean aesthetic.
+    Application Structure Plan: The application is structured as a vertical scrolling narrative, telling a story from the ambitious goal to the detailed execution. It starts with the "What" (the 1000 Cr goal), moves to the "Why" (market opportunity), introduces "Who" (my background and personal brand), details the "How" (my strategy, team, and frameworks), highlights "Proven Impact" (my track record), covers the "Guardrails" (data-driven approach and risk mitigation), and ends with the "Payoff" (value proposition & CTA). This logical flow is more engaging than a static report and guides the user through a persuasive argument, making it ideal for an interview presentation.
+    Visualization & Content Choices: 
+    - Revenue Goal: Bar Chart (Chart.js) to clearly show year-on-year growth. Goal: Compare/Change.
+    - Market Stats: Big Numbers (HTML/CSS) for high-impact stats like market size. Goal: Inform.
+    - My Journey: Timeline/Key Facts (HTML/CSS with Unicode icons) for scannable career highlights. Goal: Organize/Inform.
+    - My Brand: Personal details, social links, awards, and video links with actual YouTube thumbnails (HTML/CSS, Unicode icons). Goal: Inform/Engage.
+    - My Track Record: Highlighted achievements (HTML/CSS with Unicode icons) to showcase specific impactful results. Goal: Inform/Organize.
+    - Key Drivers/Pillars: Cards with Icons (HTML/CSS using Unicode) for scannable, organized information. Goal: Organize.
+    - Expansion Plan: Structured HTML lists and text to describe geographical focus. Goal: Organize.
+    - Sales Framework: Flowchart built with HTML/CSS and borders to show process. Goal: Organize.
+    - Hunter/Farmer & BANT/SPIN: Two-column layouts for direct comparison. Goal: Compare.
+    - KPI Dashboard: Grid of cards with a mix of Big Numbers and mini Line/Doughnut charts (Chart.js) to simulate a real dashboard. Goal: Inform/Compare.
+    CONFIRMATION: NO SVG graphics used. NO Mermaid JS used.
+    -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8FAFC;
+            color: #1E293B;
+        }
+        .c-primary { color: #0D47A1; }
+        .bg-c-primary { background-color: #0D47A1; }
+        .c-secondary { color: #42A5F5; }
+        .bg-c-secondary { background-color: #42A5F5; }
+        .border-c-primary { border-color: #0D47A1; }
+        .border-c-secondary { border-color: #42A5F5; }
+        
+        .chart-container {
+            position: relative;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 2rem;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.25rem;
+            width: 0.75rem;
+            height: 0.75rem;
+            background-color: #0D47A1;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 0.35rem;
+            top: 1rem;
+            bottom: -0.5rem;
+            width: 0.125rem;
+            background-color: #42A5F5;
+        }
+        .video-thumbnail {
+            width: 100%;
+            height: 150px; /* Fixed height for thumbnails */
+            background-color: #cbd5e1; /* Placeholder gray if image fails */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.875rem;
+            color: #475569;
+            text-align: center;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            position: relative;
+            background-size: cover; /* Ensure image covers the area */
+            background-position: center; /* Center the background image */
+        }
+        .video-thumbnail::after {
+            content: '▶️'; /* Play icon */
+            position: absolute;
+            font-size: 3rem;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header / Hero Section -->
+    <header class="bg-c-primary text-white text-center py-20 px-4 relative overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-20"></div>
+        <div class="relative z-10">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">Leading CPrompt Solutions to 1000 Crores</h1>
+            <p class="mt-4 text-xl md:text-2xl font-light text-gray-200">My Strategic Sales Vision for Hyper-Growth in 3 Years</p>
+            <p class="mt-8 text-lg font-semibold">Presented by Vishal Makhija</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8">
+        
+        <!-- The Audacious Goal -->
+        <section id="goal" class="fade-in-section my-16 md:my-24">
+            <h2 class="text-3xl md:text-4xl font-bold text-center c-primary mb-2">The Audacious Goal</h2>
+            <p class="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">A 16x revenue transformation, moving from a strong foundation to market dominance. This isn't a projection; it's a data-backed roadmap.</p>
+            <div class="bg-white p-6 rounded-xl shadow-lg max-w-4xl mx-auto">
+                <div class="chart-container h-64 md:h-96">
+                    <canvas id="revenueGrowthChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Market Opportunity -->
+        <section id="opportunity" class="fade-in-section my-16 md:my-24">
+            <h2 class="text-3xl md:text-4xl font-bold text-center c-primary mb-2">The Market Opportunity</h2>
+            <p class="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">Our growth is fueled by a booming market. We are perfectly positioned to capture immense demand by solving critical business pains.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-lg text-center flex flex-col justify-center">
+                    <span class="text-4xl font-extrabold c-secondary">$106.8B</span>
+                    <p class="mt-2 text-gray-700 font-semibold">India Enterprise Asset Leasing Market (2024)</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg text-center flex flex-col justify-center">
+                    <span class="text-4xl font-extrabold c-secondary">~29%</span>
+                    <p class="mt-2 text-gray-700 font-semibold">Global DaaS Market CAGR</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg text-center flex flex-col justify-center">
+                     <span class="text-4xl font-extrabold c-secondary">&gt;60%</span>
+                    <p class="mt-2 text-gray-700 font-semibold">of Businesses Cite Cost Savings as a Primary Benefit</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg text-center flex flex-col justify-center">
+                    <span class="text-4xl font-extrabold c-secondary">&gt;45%</span>
+                    <p class="mt-2 text-gray-700 font-semibold">of Startups Opt for Rental Solutions</p>
+                </div>
+            </div>
+
+            <!-- LLM Feature: Market Insight Generator -->
+            <div class="mt-12 text-center">
+                <button id="generateMarketInsightBtn" class="bg-c-secondary text-white font-bold py-3 px-6 rounded-full hover:bg-blue-400 transition-colors shadow-md">
+                    ✨ Generate Market Insight
+                </button>
+                <div id="marketInsightOutput" class="bg-gray-100 p-6 rounded-xl shadow-inner mt-4 max-w-2xl mx-auto text-gray-800 text-left hidden">
+                    <p class="font-bold mb-2">AI-Generated Market Insight:</p>
+                    <p id="marketInsightText" class="text-sm"></p>
+                    <div id="marketInsightLoading" class="text-center mt-2 hidden">
+                        <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-c-primary mx-auto"></div>
+                        <p class="text-gray-500 text-sm mt-2">Generating insight...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- My Journey: The Foundation for Hyper-Growth -->
+        <section id="my-journey" class="fade-in-section my-16 md:my-24">
+            <h2 class="text-3xl md:text-4xl font-bold text-center c-primary mb-2">My Journey: The Foundation for Hyper-Growth</h2>
+            <p class="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">My 18 years of diverse experience in sales, consulting, and entrepreneurship provides a unique blend of expertise for this challenge.</p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold c-primary mb-4">Key Milestones</h3>
+                    <div class="space-y-4">
+                        <div class="timeline-item">
+                            <h4 class="font-semibold text-lg">2001-2004: BSc (Allahabad University)</h4>
+                            <p class="text-gray-600">Mathematics and Computers.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4 class="font-semibold text-lg">2005-2007: MBA (NMIMS)</h4>
+                            <p class="text-gray-600">Strong academic foundation in Marketing & IT.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4 class="font-semibold text-lg">2007-2008: Aditya Birla Leadership Program (ABGLP)</h4>
+                            <p class="text-gray-600">Management Trainee, worked on business strategy enhancement for Jayashree Textile and Madura Garments.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4 class="font-semibold text-lg">2008-2010: Evalueserve (1st Stint)</h4>
+                            <p class="text-gray-600">Manager - Business Research, leading multicultural teams, executing 100s of projects.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4 class="font-semibold text-lg">2010-2016: Beroe (Director Sales - APAC)</h4>
+                            <p class="text-gray-600">Pivotal role in transforming Beroe from startup to global leader; pioneered APAC expansion, client acquisitions in UAE, KSA, India.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4 class="font-semibold text-lg">2016-2018: Evalueserve (2nd Stint - AVP)</h4>
+                            <p class="text-gray-600">Led Global Procurement Intelligence Practice, launched 2 digital products, brought in 20+ Fortune 500 logos.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4 class="font-semibold text-lg">2018-2023: Co-Founder, DRUT</h4>
+                            <p class="text-gray-600">Enabled growth, funding, and acquisitions for 6 B2B startups; setup large inside sales teams.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4 class="font-semibold text-lg">2023-Present: Co-Founder, Taiyaar</h4>
+                            <p class="text-gray-600">Launched HR marketplace, gained valuable tech experience, empowering raw talent from smaller cities.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg flex flex-col justify-center items-center">
+                    <h3 class="text-2xl font-bold c-primary mb-4 text-center">My Core Strengths</h3>
+                    <div class="grid grid-cols-2 gap-4 text-center w-full">
+                        <div class="p-4 bg-gray-50 rounded-lg">
+                            <span class="text-4xl">💼</span>
+                            <p class="font-semibold mt-2">18 Years Consultative Sales</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg">
+                            <span class="text-4xl">B2B</span>
+                            <p class="font-semibold mt-2">B2B Sales Expert</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg">
+                            <span class="text-4xl">🚀</span>
+                            <p class="font-semibold mt-2">2X Entrepreneur</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg">
+                            <span class="text-4xl">✈️</span>
+                            <p class="font-semibold mt-2">Global Experience</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg col-span-2">
+                             <span class="text-4xl">💡</span>
+                            <p class="font-semibold mt-2">Data Science & AI Advocate</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- My Brand & Impact -->
+        <section id="my-brand" class="fade-in-section my-16 md:my-24">
+            <h2 class="text-3xl md:text-4xl font-bold text-center c-primary mb-2">My Brand: Leadership & Impact</h2>
+            <p class="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">Beyond the resume, my commitment to leadership, innovation, and industry contribution speaks for itself.</p>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center flex flex-col items-center">
+                    <div class="w-32 h-32 rounded-full bg-gray-200 flex items-center justify-center overflow-hidden mb-4">
+                        <img src="vishal.jpg" alt="Vishal Makhija" class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <h3 class="text-xl font-bold c-primary mb-2">Connect with Me</h3>
+                    <p class="text-gray-600 mb-4">Find my professional journey and thought leadership on LinkedIn.</p>
+                    <a href="https://www.linkedin.com/in/vishal-makhija-66898751/" target="_blank" class="bg-c-secondary text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-blue-400 transition-colors">
+                        LinkedIn Profile ▶️
+                    </a>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center lg:col-span-2">
+                    <h3 class="text-2xl font-bold c-primary mb-4">Recognitions & Public Voice</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div class="bg-gray-50 p-4 rounded-lg flex items-center justify-center space-x-3">
+                            <span class="text-3xl">🏆</span>
+                            <p class="font-semibold text-gray-800">Chairman Award Recipient (Evalueserve)</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg flex items-center justify-center space-x-3">
+                            <span class="text-3xl">🏅</span>
+                            <p class="font-semibold text-gray-800">Multiple Awards (Beroe, Evalueserve)</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg flex items-center justify-center space-x-3 col-span-full">
+                            <span class="text-3xl">🎤</span>
+                            <p class="font-semibold text-gray-800">Speaker at various conferences, including NASSCOM</p>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold c-primary mb-4">Featured Sales & Industry Insights</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <a href="https://www.youtube.com/watch?v=pZMWXlKUlQI" target="_blank" class="block rounded-lg shadow-md hover:shadow-lg transition-shadow overflow-hidden">
+                            <div class="video-thumbnail" style="background-image: url('https://img.youtube.com/vi/pZMWXlKUlQI/hqdefault.jpg');">
+                                <!-- Actual thumbnail will be loaded via CSS background-image -->
+                            </div>
+                            <p class="text-sm font-semibold text-gray-700 p-2">Decoding Future of Procurement: A Sales Perspective</p>
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=lgZgQcTifQM" target="_blank" class="block rounded-lg shadow-md hover:shadow-lg transition-shadow overflow-hidden">
+                            <div class="video-thumbnail" style="background-image: url('https://img.youtube.com/vi/lgZgQcTifQM/hqdefault.jpg');">
+                                <!-- Actual thumbnail will be loaded via CSS background-image -->
+                            </div>
+                            <p class="text-sm font-semibold text-gray-700 p-2">NISC 2019 - Sales Leadership Interview with Mr. Vishal Makhija</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- My Strategic Pillars -->
+        <section id="strategy" class="fade-in-section my-16 md:my-24">
+            <h2 class="text-3xl md:text-4xl font-bold text-center c-primary mb-12">My Strategic Pillars for Hyper-Growth</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+                    <div class="text-5xl c-secondary mb-4">💻</div>
+                    <h3 class="text-xl font-bold c-primary mb-2">Optimized DaaS</h3>
+                    <p class="text-gray-600">Package current offerings into best-in-class, full-lifecycle Device-as-a-Service solutions that are irresistible to enterprise clients.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+                    <div class="text-5xl c-secondary mb-4">📈</div>
+                    <h3 class="text-xl font-bold c-primary mb-2">Value-Driven Solutions</h3>
+                    <p class="text-gray-600">Shift from selling hardware to providing comprehensive solutions that solve major business problems and deliver clear, quantifiable ROI.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+                     <div class="text-5xl c-secondary mb-4">🤝</div>
+                    <h3 class="text-xl font-bold c-primary mb-2">Strategic Alliances</h3>
+                    <p class="text-gray-600">Build deep partnerships with OEMs, System Integrators, and ISVs to expand our reach and create an unbeatable ecosystem.</p>
+                     <!-- LLM Feature: Strategic Alliance Brainstormer -->
+                    <button id="brainstormAlliancesBtn" class="mt-4 bg-blue-100 text-c-primary font-bold py-2 px-4 rounded-full text-sm hover:bg-blue-200 transition-colors">
+                        ✨ Brainstorm More Alliances
+                    </button>
+                    <div id="allianceBrainstormOutput" class="bg-gray-100 p-4 rounded-xl shadow-inner mt-4 text-gray-800 text-left hidden">
+                        <p class="font-bold mb-1 text-sm">AI-Generated Alliance Ideas:</p>
+                        <p id="allianceBrainstormText" class="text-xs"></p>
+                        <div id="allianceBrainstormLoading" class="text-center mt-2 hidden">
+                            <div class="animate-spin rounded-full h-6 w-6 border-b-2 border-c-primary mx-auto"></div>
+                            <p class="text-gray-500 text-xs mt-1">Brainstorming...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Targeting and Expansion -->
+        <section id="targeting" class="fade-in-section my-16 md:my-24">
+            <h2 class="text-3xl md:text-4xl font-bold text-center c-primary mb-2">Targeting & Geographical Expansion</h2>
+            <p class="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">We will fish where the big fish are, focusing on high-potential clients and strategically expanding our footprint across India and beyond.</p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold c-primary mb-4 text-center">Hyper-Growth Client Segments</h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 text-center">
+                        <div class="p-4 bg-gray-50 rounded-lg"><span class="text-3xl">💰</span><p class="font-semibold mt-2">Profitable Firms<br>(Revenue &gt;1000cr)</p></div>
+                        <div class="p-4 bg-gray-50 rounded-lg"><span class="text-3xl">💻</span><p class="font-semibold mt-2">IT/ITES</p></div>
+                        <div class="p-4 bg-gray-50 rounded-lg"><span class="text-3xl">🏦</span><p class="font-semibold mt-2">BFSI</p></div>
+                        <div class="p-4 bg-gray-50 rounded-lg"><span class="text-3xl">🏫</span><p class="font-semibold mt-2">Educational Chains</p></div>
+                        <div class="p-4 bg-gray-50 rounded-lg"><span class="text-3xl">🎧</span><p class="font-semibold mt-2">BPO / KPO</p></div>
+                        <div class="p-4 bg-gray-50 rounded-lg"><span class="text-3xl">🚀</span><p class="font-semibold mt-2">Series B Funded: Startups</p></div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold c-primary mb-4 text-center">India Footprint & Expansion</h3>
+                    <div class="flex flex-col space-y-4 text-gray-600">
+                        <p><span class="font-semibold text-c-primary">Deepen & Dominate:</span> Bangalore, Hyderabad, Pune</p>
+                        <p><span class="font-semibold text-c-secondary">Aggressive Expansion:</span> Delhi NCR, Mumbai, Chennai, Ahmedabad</p>
+                        <p><span class="font-semibold text-yellow-500">Rapid Hub Development:</span> Kolkata, Jaipur, Chandigarh, Lucknow, Indore, Coimbatore, Kochi, Visakhapatnam, Bhopal</p>
+                    </div>
+                </div>
+            </div>
+             <div class="max-w-3xl mx-auto mt-12 text-center">
+                <h3 class="text-2xl font-bold c-primary mb-4">Beyond India: Global Horizon 🌏</h3>
+                <p class="text-gray-600">Phase 2 will see targeted launches into Southeast Asia (Singapore, Malaysia) and the Middle East (UAE), focusing on enterprise-level deals leveraging our established Pan-India success and existing Indian MNC client relationships.</p>
+            </div>
+        </section>
+
+        <!-- Sales Frameworks -->
+        <section id="frameworks" class="fade-in-section my-16 md:my-24">
+            <h2 class="text-3xl md:text-4xl font-bold text-center c-primary mb-12">My Sales Execution Engine</h2>
+            
+            <!-- Sales Acceleration Framework -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-bold c-primary mb-6 text-center">Sales Acceleration Framework</h3>
+                <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 text-center">
+                    <div class="flex items-center md:flex-col">
+                        <div class="bg-white p-6 rounded-xl shadow-lg flex-grow">
+                           <div class="bg-c-primary text-white w-10 h-10 rounded-full flex items-center justify-center mx-auto text-xl font-bold mb-3">1</div>
+                           <h4 class="font-bold">Deep Discovery</h4>
+                        </div>
+                        <div class="text-2xl c-secondary mx-4 md:my-4 md:mx-0">➔</div>
+                    </div>
+                    <div class="flex items-center md:flex-col">
+                         <div class="bg-white p-6 rounded-xl shadow-lg flex-grow">
+                           <div class="bg-c-primary text-white w-10 h-10 rounded-full flex items-center justify-center mx-auto text-xl font-bold mb-3">2</div>
+                           <h4 class="font-bold">Solution Co-creation</h4>
+                        </div>
+                        <div class="text-2xl c-secondary mx-4 md:my-4 md:mx-0">➔</div>
+                    </div>
+                    <div class="flex items-center md:flex-col">
+                         <div class="bg-white p-6 rounded-xl shadow-lg flex-grow">
+                           <div class="bg-c-primary text-white w-10 h-10 rounded-full flex items-center justify-center mx-auto text-xl font-bold mb-3">3</div>
+                           <h4 class="font-bold">Value Articulation</h4>
+                        </div>
+                        <div class="text-2xl c-secondary mx-4 md:my-4 md:mx-0">➔</div>
+                    </div>
+                    <div class="flex items-center md:flex-col">
+                         <div class="bg-white p-6 rounded-xl shadow-lg flex-grow">
+                           <div class="bg-c-primary text-white w-10 h-10 rounded-full flex items-center justify-center mx-auto text-xl font-bold mb-3">4</div>
+                           <h4 class="font-bold">Executive Engagement</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hunter/Farmer & BANT/SPIN -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold c-primary mb-4 text-center">Sales Team Structure</h3>
+                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="text-center p-4 border-2 border-c-secondary rounded-lg">
+                            <span class="text-4xl">🏹</span>
+                            <h4 class="text-xl font-bold mt-2">Hunters</h4>
+                            <p class="text-gray-600">New Logo Acquisition. Highly incentivized to bring in large enterprise deals.</p>
+                            <p class="font-bold c-primary mt-2">Drives 70-80% of New Revenue</p>
+                        </div>
+                         <div class="text-center p-4 border-2 border-gray-300 rounded-lg">
+                            <span class="text-4xl">🧑‍🌾</span>
+                            <h4 class="text-xl font-bold mt-2">Farmers</h4>
+                            <p class="text-gray-600">Existing Account Expansion. Focused on retention, upsell, and cross-sell.</p>
+                             <p class="font-bold c-primary mt-2">Ensures High NRR & LTV</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold c-primary mb-4 text-center">Predictive Sales Methodologies</h3>
+                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="text-center p-4 bg-gray-50 rounded-lg">
+                             <h4 class="text-xl font-bold">BANT for Hunting</h4>
+                             <p class="text-gray-600 mt-2">Qualify leads for <span class="font-semibold">B</span>udget, <span class="font-semibold">A</span>uthority, <span class="font-semibold">N</span>eed, and <span class="font-semibold">T</span>imeline to ensure maximum efficiency.</p>
+                        </div>
+                         <div class="text-center p-4 bg-gray-50 rounded-lg">
+                            <h4 class="text-xl font-bold">SPIN for Farming</h4>
+                            <p class="text-gray-600 mt-2">Uncover deeper needs by discussing <span class="font-semibold">S</span>ituation, <span class="font-semibold">P</span>roblem, <span class="font-semibold">I</span>mplication, and <span class="font-semibold">N</span>eed-Payoff.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- My Track Record: Proven Impact & Leadership -->
+        <section id="track-record" class="fade-in-section my-16 md:my-24">
+            <h2 class="text-3xl md:text-4xl font-bold text-center c-primary mb-2">My Track Record: Proven Impact & Leadership</h2>
+            <p class="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">My career is marked by tangible results in scaling businesses, expanding markets, and building high-performing teams.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+                    <div class="text-5xl c-secondary mb-4">📈</div>
+                    <h3 class="text-xl font-bold c-primary mb-2">Startup to Global Leader</h3>
+                    <p class="text-gray-600">Pivotal role in Beroe's transformation. Pioneered APAC expansion, acquired leading government & private companies.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+                    <div class="text-5xl c-secondary mb-4">🌟</div>
+                    <h3 class="text-xl font-bold c-primary mb-2">Fortune 500 Client Acquisition</h3>
+                    <p class="text-gray-600">Brought in 20+ Fortune logos at Evalueserve, significantly enhancing market standing.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+                     <div class="text-5xl c-secondary mb-4">🚀</div>
+                    <h3 class="text-xl font-bold c-primary mb-2">Startup Scaling & Funding</h3>
+                    <p class="text-gray-600">Co-founded DRUT, enabling growth, funding, and acquisitions for 6 B2B startups.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+                    <div class="text-5xl c-secondary mb-4">🏅</div>
+                    <h3 class="text-xl font-bold c-primary mb-2">Award-Winning Leadership</h3>
+                    <p class="text-gray-600">Recipient of Evalueserve's prestigious Chairman Award for outstanding contributions.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+                    <div class="text-5xl c-secondary mb-4">🌐</div>
+                    <h3 class="text-xl font-bold c-primary mb-2">Global Market Expertise</h3>
+                    <p class="text-gray-600">18 years of B2B sales experience across US, China, UAE, India, KSA, Switzerland, Germany.</p>
+                </div>
+                 <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+                    <div class="text-5xl c-secondary mb-4">💡</div>
+                    <h3 class="text-xl font-bold c-primary mb-2">Innovation & Digital Products</h3>
+                    <p class="text-gray-600">Successfully launched 2 groundbreaking digital procurement intelligence products at Evalueserve.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Data Driven Culture -->
+        <section id="data" class="fade-in-section my-16 md:my-24">
+            <h2 class="text-3xl md:text-4xl font-bold text-center c-primary mb-2">A Data-Driven Sales Culture</h2>
+            <p class="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">Sales under my leadership is a science. We will use real-time data to make agile decisions, predict outcomes, and drive performance.</p>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <h4 class="font-bold text-gray-500 text-sm">Revenue Growth (YTD)</h4>
+                    <p class="text-3xl font-bold c-primary mt-2">₹1.2 Cr</p>
+                    <p class="text-green-500 font-semibold flex items-center">▲ 15%</p>
+                </div>
+                 <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <h4 class="font-bold text-gray-500 text-sm">Net Revenue Retention</h4>
+                    <p class="text-3xl font-bold c-primary mt-2">115%</p>
+                    <p class="text-gray-500 font-semibold">Target: 120%</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg col-span-2 md:col-span-1 lg:col-span-2">
+                     <h4 class="font-bold text-gray-500 text-sm mb-2">Pipeline Health</h4>
+                    <div class="chart-container h-16">
+                        <canvas id="pipelineHealthChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg col-span-2 md:col-span-3 lg:col-span-2">
+                    <h4 class="font-bold text-gray-500 text-sm mb-2">Quarterly Win Rate</h4>
+                     <div class="chart-container h-32">
+                        <canvas id="winRateChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <h4 class="font-bold text-gray-500 text-sm">Avg. Deal Size</h4>
+                    <p class="text-3xl font-bold c-primary mt-2">₹45L</p>
+                    <p class="text-green-500 font-semibold flex items-center">▲ 8% QoQ</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <h4 class="font-bold text-gray-500 text-sm">Sales Cycle</h4>
+                    <p class="text-3xl font-bold c-primary mt-2">72 Days</p>
+                    <p class="text-red-500 font-semibold flex items-center">▼ -5 Days</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Risk Mitigation -->
+        <section id="risks" class="fade-in-section my-16 md:my-24">
+            <h2 class="text-3xl md:text-4xl font-bold text-center c-primary mb-2">Mitigating Risk, Ensuring Stability</h2>
+            <p class="text-center text-lg text-gray-600 mb-12 max-w-3xl mx-auto">A good leader anticipates challenges. For every potential risk on our journey, there is a proactive mitigation strategy.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-lg flex items-start space-x-4">
+                    <span class="text-3xl text-red-500">⚠️</span>
+                    <div>
+                        <h4 class="font-bold">Execution Gap</h4>
+                        <p class="text-sm text-gray-600">🛡️ <span class="font-semibold">Mitigation:</span> Rigorous process, clear KPIs, weekly performance reviews.</p>
+                    </div>
+                </div>
+                 <div class="bg-white p-6 rounded-xl shadow-lg flex items-start space-x-4">
+                    <span class="text-3xl text-red-500">⚠️</span>
+                    <div>
+                        <h4 class="font-bold">Talent Attrition</h4>
+                        <p class="text-sm text-gray-600">🛡️ <span class="font-semibold">Mitigation:</span> Competitive comp, strong culture, clear career paths.</p>
+                    </div>
+                </div>
+                 <div class="bg-white p-6 rounded-xl shadow-lg flex items-start space-x-4">
+                    <span class="text-3xl text-red-500">⚠️</span>
+                    <div>
+                        <h4 class="font-bold">Competitive Pressure</h4>
+                        <p class="text-sm text-gray-600">🛡️ <span class="font-semibold">Mitigation:</span> Focus on value-selling, superior service, strategic alliances.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <!-- Footer / CTA -->
+    <footer class="bg-gray-800 text-white text-center py-16 px-4 mt-24">
+        <h2 class="text-3xl font-bold">Let's Build This Future Together.</h2>
+        <p class="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">This vision is detailed, data-backed, and actionable. I have the framework and experience to lead this transformation. I am ready to build the future of CPrompt Solutions.</p>
+        <button class="mt-8 bg-c-secondary text-white font-bold py-3 px-8 rounded-full hover:bg-blue-400 transition-colors">Schedule a Deeper Discussion</button>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        
+        const wrapLabel = (label, maxWidth) => {
+            if (label.length <= maxWidth) {
+                return label;
+            }
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + ' ' + word).trim().length > maxWidth) {
+                    lines.push(currentLine.trim());
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            });
+            if (currentLine) {
+                lines.push(currentLine.trim());
+            }
+            return lines;
+        };
+        
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+              return label.join(' ');
+            }
+            return label;
+        };
+        
+        const defaultChartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    callbacks: {
+                        title: tooltipTitleCallback
+                    }
+                }
+            },
+        };
+
+        // Revenue Growth Chart
+        const revenueCtx = document.getElementById('revenueGrowthChart').getContext('2d');
+        new Chart(revenueCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Current', 'FY 2025-26', 'FY 2026-27', 'FY 2027-28'],
+                datasets: [{
+                    label: 'Revenue (in Cr)',
+                    data: [60, 214, 763, 1000],
+                    backgroundColor: ['#42A5F5', '#42A5F5', '#42A5F5', '#0D47A1'],
+                    borderColor: '#FFFFFF',
+                    borderWidth: 2,
+                    borderRadius: 5,
+                }]
+            },
+            options: {
+                ...defaultChartOptions,
+                 plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                         callbacks: {
+                            title: tooltipTitleCallback,
+                            label: function(context) {
+                                return `₹ ${context.raw} Cr`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Revenue (in Crores)'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Pipeline Health Chart
+        const pipelineCtx = document.getElementById('pipelineHealthChart').getContext('2d');
+        new Chart(pipelineCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Discovery', 'Proposal', 'Negotiation', 'Closing'],
+                datasets: [{
+                    data: [120, 75, 40, 15],
+                    backgroundColor: ['#0D47A1', '#1E88E5', '#42A5F5', '#90CAF9'],
+                    borderColor: '#FFFFFF',
+                    borderWidth: 2,
+                }]
+            },
+            options: {
+                ...defaultChartOptions,
+                cutout: '70%',
+            }
+        });
+
+        // Win Rate Chart
+        const winRateCtx = document.getElementById('winRateChart').getContext('2d');
+        new Chart(winRateCtx, {
+            type: 'line',
+            data: {
+                labels: ['Q1', 'Q2', 'Q3', 'Q4 (Proj.)'],
+                datasets: [{
+                    label: 'Win Rate %',
+                    data: [22, 25, 28, 32],
+                    borderColor: '#0D47A1',
+                    backgroundColor: 'rgba(13, 71, 161, 0.1)',
+                    fill: true,
+                    tension: 0.4,
+                }]
+            },
+            options: {
+                ...defaultChartOptions,
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        ticks: {
+                           callback: function(value) {
+                                return value + '%';
+                            }
+                        }
+                    }
+                },
+                 plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback,
+                            label: function(context) {
+                                return `${context.dataset.label}: ${context.raw}%`;
+                            }
+                        }
+                    }
+                },
+            }
+        });
+
+        // Fade in sections on scroll
+        const sections = document.querySelectorAll('.fade-in-section');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Gemini API Integration
+        const apiKey = ""; 
+
+        async function callGeminiAPI(prompt, outputElement, loadingElement) {
+            outputElement.classList.add('hidden');
+            loadingElement.classList.remove('hidden');
+            outputElement.innerHTML = ''; 
+
+            const chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
+            const payload = { contents: chatHistory };
+
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const result = await response.json();
+
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    const text = result.candidates[0].content.parts[0].text;
+                    outputElement.innerHTML = `<p>${text}</p>`;
+                } else {
+                    outputElement.innerHTML = `<p class="text-red-600">Error: Could not generate insight. Please try again.</p>`;
+                }
+            } catch (error) {
+                console.error('Error calling Gemini API:', error);
+                outputElement.innerHTML = `<p class="text-red-600">Error: Failed to connect to AI service.</p>`;
+            } finally {
+                loadingElement.classList.add('hidden');
+                outputElement.classList.remove('hidden');
+            }
+        }
+
+        // Market Insight Generator
+        const generateMarketInsightBtn = document.getElementById('generateMarketInsightBtn');
+        const marketInsightOutputDiv = document.getElementById('marketInsightOutput');
+        const marketInsightText = document.getElementById('marketInsightText');
+        const marketInsightLoading = document.getElementById('marketInsightLoading');
+
+        generateMarketInsightBtn.addEventListener('click', () => {
+            const prompt = `Given the current trends in the Indian Enterprise Asset Leasing and Global DaaS market (CAGR ~29%, value ~$106.8B, drivers like CapEx to OpEx shift, remote work, tech cycles), generate a concise, additional strategic insight that CPrompt Solutions could leverage for hyper-growth. Focus on an area not explicitly covered but implied by these trends.`;
+            callGeminiAPI(prompt, marketInsightText, marketInsightLoading);
+        });
+
+        // Strategic Alliance Brainstormer
+        const brainstormAlliancesBtn = document.getElementById('brainstormAlliancesBtn');
+        const allianceBrainstormOutputDiv = document.getElementById('allianceBrainstormOutput');
+        const allianceBrainstormText = document.getElementById('allianceBrainstormText');
+        const allianceBrainstormLoading = document.getElementById('allianceBrainstormLoading');
+
+        brainstormAlliancesBtn.addEventListener('click', () => {
+            const prompt = `For an IT equipment rental and DaaS company aiming for hyper-growth, brainstorm 3-4 specific types of strategic partners beyond general System Integrators and OEMs, focusing on how these partnerships could unlock new revenue streams or market access.`;
+            callGeminiAPI(prompt, allianceBrainstormText, allianceBrainstormLoading);
+        });
+    });
+    </script>
+</body>
+</html>
+interactive-sales-plan.html
+
+Displaying interactive-sales-plan.html.
